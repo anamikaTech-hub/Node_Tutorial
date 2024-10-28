@@ -8,7 +8,7 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.length('/about',(req,res)=>{
+app.get('/about',(req,res)=>{
     res.send('About page');
 });
 

@@ -3,8 +3,10 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+
+
 ///-------APP.ALL()==> used to handle all HTTP methods for a specific route.
-app.call('/example',(req,res)=>{
+app.all('/example',(req,res)=>{
     res.send('This responds to all HTTP methods');
 })
 
@@ -53,4 +55,9 @@ app.listen(3000,()=>{
     console.log('server is running on 3000');
     
 });
+
+////--------------HTTP COMPRESSION
+
+const compression = require('compression')
+app.use(compression()) // automatically compress responses
 
